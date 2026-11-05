@@ -1,6 +1,6 @@
 ---
 name: pr-flow-story
-description: Map a PR or large diff into a top-down before/after flow diagram, the change's story, and a focus guide for reviewers (design and dependency boundaries first; leaf details later). Use when reviewing a big AI-generated PR, when the user says "explain this PR", "draw the flow", "what should I focus on", "PR story", or "visual review map". Complements stacked-pr-split when the PR should also be broken up.
+description: Map a PR or large diff into a top-down before/after flow diagram, the change's story, and a focus guide for reviewers (design and dependency boundaries first; leaf details later). Use when reviewing a big AI-generated PR, when the user says "explain this PR", "draw the flow", "what should I focus on", "PR story", or "visual review map". Complements stacked-pr-split when the PR should also be broken up, and nicobailon/visual-explainer (e.g. /diff-review) when you want a rich HTML visual of the same change.
 ---
 
 # PR Flow Story
@@ -166,9 +166,19 @@ flowchart TD
 
 Optionally paste a short version as a PR comment if the user asked to post one. Do not post without being asked.
 
-## 7. Optional: run alongside automated reviewers
+## 7. Optional: visuals and automated reviewers
 
-You may run other review tools or agents in parallel (bug-finding, style). Keep their findings **secondary** until the story and focus map exist — otherwise the human gets a pile of nits without a map. When both exist, attach automated findings under the Focus items they belong to.
+Once the story and Mermaid focus map exist, you may also:
+
+- Run **[visual-explainer](https://github.com/nicobailon/visual-explainer)** (`/diff-review`, `/generate-web-diagram`, slides) for a self-contained HTML page of the same change.
+- Run other review tools or agents in parallel (bug-finding, style). Keep their findings **secondary** until the story and focus map exist — otherwise the human gets a pile of nits without a map. When both exist, attach automated findings under the Focus items they belong to.
+
+
+## Related skills
+
+- [stacked-pr-split](https://github.com/TomerCohen95/stacked-pr-split) — when the story does not fit one review, split into stacked PRs (`gh stack`).
+- [visual-explainer](https://github.com/nicobailon/visual-explainer) — rich HTML / slides for the same understanding; especially `/diff-review` and `/generate-web-diagram`. Use **after** (or alongside) this skill’s story + Mermaid focus map when you want a browser-ready visual. Install: `npx skills add nicobailon/visual-explainer`.
+- Optional: [PR Lens](https://github.com/coldteadotai/pr-lens) — animated architecture / data-flow walkthroughs inside the PR (GitHub App, Action, CLI, or skill).
 
 ## Anti-patterns
 

@@ -21,9 +21,11 @@ Copy this folder into your agent’s skills directory, for example:
 
 The skill file is [`SKILL.md`](./SKILL.md).
 
-## Companion
+## Companion / related
 
 - [stacked-pr-split](https://github.com/TomerCohen95/stacked-pr-split) — split a mega-change into stacked PRs when this skill says the story does not fit in one review.
+- [visual-explainer](https://github.com/nicobailon/visual-explainer) (`nicobailon/visual-explainer`) — HTML / slides / `/diff-review` for a rich visual of the same PR. Install: `npx skills add nicobailon/visual-explainer`.
+- Optional: [PR Lens](https://github.com/coldteadotai/pr-lens) — animated PR architecture walkthroughs.
 
 ## License
 
